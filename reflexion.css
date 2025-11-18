@@ -1,0 +1,897 @@
+/* ==================== */
+/* 🎨 VARIABLES DE COLOR */
+/* ==================== */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-accent: #0077ff;
+  --color-card-bg: #f3f3f3;
+  --color-border: #ccc;
+  --color-footer-bg: #f5f5f5;
+  --color-text-sunnyAndMoon:rgba(223,222,222);
+  --dark-mode-width:80px;
+  --dark-mode-height:40px;
+  --color-card-bg-transparet:#f3f3f3b5;
+}
+
+/* 🌙 DARK MODE */
+body.dark-mode {
+  --color-bg: rgba(22,22,22);       /* fondo negro */
+  --color-text: #ffffff;     /* texto blanco */
+  --color-accent: #FCDE5B;  /* amarillo para botones y acentos */
+  --color-card-bg: #1a1a1a;  /* color de tarjetas oscuro */
+  --color-border: #333333;   /* bordes oscuros */
+  --color-footer-bg: rgba(11,11, 11,); /* fondo footer negro */
+  --color-text-sunnyAndMoon:#ffff;
+  background-color: var(--color-bg);
+  /*color: var(--color-text);*/
+
+  --color-card-bg-transparet:#1a1a1a7d;;
+}
+/* ========= MOBILE HEADER ========= */
+.mobile-header,
+.mobile-menu {
+  display: none;
+}
+/**/
+
+.dark-mode2{
+    border-radius: 999px;
+    background-color: #DFDEDE;
+    cursor: pointer;
+    
+    min-width: 50px;   /* garantiza que sea visible */
+    min-height: 25px;  /* garantiza que sea visible */
+    transition: background-color 0.5s ease;
+    flex-shrink: 0;
+
+}
+body.active2 .dark-mode2{
+    background-color: white;
+}
+
+.sunnyAndMoon2{
+  font-size: 1.5rem;
+  user-select: none;
+  transition: transform 0.4s ease;
+  color: rgba(223,222,222);
+  
+}
+
+/*body.dark-mode2 .mobile-header {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+}*/
+
+/* Botón hamburguesa en dark mode */
+body.dark-mode2 .menu-btn,
+body.dark-mode2 .darkmode-btn {
+  color: var(--color-accent);
+}
+
+/* Menú móvil en dark mode */
+body.dark-mode2 .mobile-menu {
+  background: linear-gradient(135deg, #1a1a1a, #000000);
+  color: var(--color-text);
+}
+
+
+
+/* Títulos y links con acento amarillo en dark mode */
+body.dark-mode2 .titulo span,
+body.dark-mode2 .menu a.active2,
+body.dark-mode2 .contact-card a:hover {
+  color: var(--color-accent);
+}
+
+/**/
+
+@media (max-width: 870px) {
+  .navbar {
+    display: none;
+  }
+
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px;
+    background: var(--color-bg);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+
+  /* 🔹 Ajuste del área central del título */
+  .mobile-titulo {
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+    overflow: hidden;
+  }
+
+  .mobile-titulo h1 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .mobile-titulo p {
+    font-size: 0.75rem;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .mobile-titulo span {
+    font-size: 0.7rem;
+    opacity: 0.85;
+  }
+
+  /* 🔹 Botón hamburguesa */
+  .menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--color-accent);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .menu-btn.active {
+    transform: rotate(90deg);
+  }
+
+.dark-mode{
+    border-radius: 999px;
+    background-color: #DFDEDE;
+    cursor: pointer;
+    
+    min-width: 50px;   /* garantiza que sea visible */
+    min-height: 25px;  /* garantiza que sea visible */
+    transition: background-color 0.5s ease;
+    flex-shrink: 0;
+
+}
+body.active .dark-mode{
+    background-color: white;
+}
+
+.sunnyAndMoon{
+  font-size: 1.5rem;
+  user-select: none;
+  transition: transform 0.4s ease;
+  color: var(--color-text-sunnyAndMoon);
+  
+}
+
+body.dark-mode .mobile-header {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+/* Botón hamburguesa en dark mode */
+body.dark-mode .menu-btn,
+body.dark-mode .darkmode-btn {
+  color: var(--color-accent);
+}
+
+/* Menú móvil en dark mode */
+body.dark-mode .mobile-menu {
+  background: linear-gradient(135deg, #1a1a1a, #000000);
+  color: var(--color-text);
+}
+
+
+
+/* Títulos y links con acento amarillo en dark mode */
+body.dark-mode .titulo span,
+body.dark-mode .menu a.active,
+body.dark-mode .contact-card a:hover {
+  color: var(--color-accent);
+}
+
+  /* 🔹 Menú móvil */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-bg));
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+    transition: all 0.5s ease;
+    z-index: 999;
+  }
+
+  .mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+
+  .mobile-menu a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .mobile-menu a:hover {
+    color: #fff;
+  }
+
+  
+}
+
+
+
+
+/* 🔹 Botón de Dark Mode */
+.darkmode-toggle {
+  background: none;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.darkmode-toggle:hover {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+/* ==================== */
+/* ESTILOS GENERALES    */
+/* ==================== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* ==================== */
+/* NAVBAR UNIFICADO     */
+/* ==================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Menús */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  justify-content: center;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.menu a:hover {
+  border-bottom: 2px solid var(--color-accent);
+  color: var(--color-accent)
+}
+
+.menu a.active {
+  border-bottom: 2px solid var(--color-accent);
+  color: var(--color-accent)
+}
+
+
+
+/* ==================== */
+/* TÍTULO CENTRAL       */
+/* ==================== */
+.titulo {
+  text-align: center;
+  flex: 1.2;
+  color: var(--color-text);
+}
+
+.titulo h1 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.titulo p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text);
+}
+
+.titulo span {
+  font-style: italic;
+  color: var(--color-accent)
+}
+
+/* ==================== */
+/* CUERPO PRINCIPAL     */
+/* ==================== */
+.contenido {
+  padding-top: 70px;
+
+  min-height: 70vh;
+  display: flex;
+}
+
+/* ============================= */
+/* 🔵 Contenedor de las 2 áreas  */
+/* ============================= */
+
+#reflexion-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+  position: relative;
+}
+
+/* ============================= */
+/* 🔵 Estilos de cada sección    */
+/* ============================= */
+
+/* usaremos el data-img para setear background via JS, pero dejamos estilos aquí */
+.area {
+  position: relative;
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* para centrar el título verticalmente */
+  align-items: center;
+  padding: 0; /* título centrado ocupa el bloque, el contenido interno tendrá padding */
+  min-height: 100vh;
+  overflow: hidden;
+  transition: flex-basis 1200ms cubic-bezier(.2,.8,.2,1), opacity 600ms ease;
+}
+
+/* ajustamos border + overlay para contraste del título */
+.area::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(.95) brightness(.88);
+  z-index: 0;
+}
+
+/* máscara suave para legibilidad del título */
+.area::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.18));
+  z-index: 1;
+}
+
+
+/* Cuando una está al 100% */
+.area.expandida {
+  flex: 1 1 100%;
+}
+
+/* La otra desaparece visualmente */
+.area.oculta {
+  flex: 0 0 0%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* título centrado */
+.title-wrapper {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.area-title {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--color-bg);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+}
+
+/* 'Ver más' aparece al hover sobre el área (debajo del título) */
+.ver-mas {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: var(--color-bg);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 200ms ease, transform 200ms ease;
+  pointer-events: none;
+  z-index: 6;
+}
+
+/* hover del área muestra el 'ver-mas' */
+.area:hover .ver-mas {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* contenido oculto (solo aparece cuando expandida) */
+.contenido-area {
+  z-index: 4;
+  width: 100%;
+  padding: 22px;
+  padding-bottom: 88px;
+  box-sizing: border-box;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: /*max-height 1000ms ease,*/ opacity 900ms ease, transform 900ms ease;
+}
+
+/* cuando el area está expandida, m ostramos el contenido con animación */
+.area.expandida .contenido-area {
+  max-height: 3000px; /* suficiente para el contenido */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* classes para ocultar/mostrar visualmente */
+.area.oculta {
+  flex-basis: 0%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* expandida exacta (el otro se contrae) */
+.area.expandida {
+  flex-basis: 100%;
+}
+
+.contenido-area.hiding {
+  transition: /*max-height 800ms ease,*/ opacity 700ms ease, transform 700ms ease;
+}
+
+
+/* ==== BLOQUES interiores - mantuvo tu estilo, ajustado para display ordenado ==== */
+.bloque {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: var(--color-card-bg-transparet);
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(0,0,0,0.06);
+  color: #111;
+}
+
+/* overlays para dark-mode */
+body.dark-mode .bloque {
+  background: rgba(20,20,20,0.85);
+  color: #eee;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* imagen placeholder */
+.bloque .img {
+  width: 120px;
+  height: 100px;
+  background: linear-gradient(45deg,#cfe1ff,#bcd5ff);
+  border-radius: 8px;
+}
+
+/* triple, doble, invertido mantienen el comportamiento que tenías */
+.bloque.triple { justify-content: space-between; }
+.bloque.doble { justify-content: flex-start; }
+.bloque.invertido { flex-direction: row-reverse; }
+
+/* ===== Botón flotante dentro del área ===== */
+
+/* ahora el botón estará posicionado absolutamente respecto al area expandida */
+.switch-btn {
+  position: absolute;        /* dentro del area expandida será child y relativo a ella */
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 56px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  z-index: 998;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+  font-weight: 600;
+  padding: 0 14px;
+}
+
+/* por si acaso, mantener el overlay pseudo */
+.switch-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.28));
+  border-radius: 999px;
+  z-index: -1;
+}
+
+/* oculto por default */
+.switch-btn.hidden { display: none; }
+
+/* ===== Corregir bloque invertido (forzar Texto | Imagen) ===== */
+.bloque.invertido {
+  /* forzamos fila normal */
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+/* explicit order para que el texto quede primero y la imagen al final */
+.bloque.invertido p {
+  order: 1;
+  margin: 0;
+  flex: 1 1 auto;
+}
+
+.bloque.invertido .img {
+  order: 2;
+  width: 120px;
+  height: 100px;
+  flex: 0 0 auto;
+}
+
+/* Asegurar que en small screens la inversión sigue siendo legible */
+/*@media (max-width: 870px) {
+  .bloque {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .bloque.invertido .img {
+    width: 100%;
+    height: 140px;
+    order: 2;
+    margin-top: 8px;
+  }
+  .bloque.invertido p { order: 1; }*/
+  /* el botón en mobile permanece oculto para UX */
+  /*.switch-btn { display: none !important; }*/
+
+  /*.switch-btn {
+    position: static;
+    margin: 25px auto 0 auto;
+    display: flex !important;
+    width: 85%;
+    height: 52px;
+  }*/
+/*}*/
+
+/* ==== RESPONSIVE ==== */
+/*@media (max-width: 870px) {
+  .area { flex-basis: 100%; min-height: 100vh; }
+  .area.oculta { opacity: 1; pointer-events: auto; }*/ /* en mobile no ocultamos */
+  /*.title-wrapper { padding: 18px; }
+  .switch-btn { display: none; }
+
+  .bloque {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bloque p {
+    order: 1 !important;
+    width: 100%;
+  }
+
+  .bloque .img {
+    order: 2 !important;
+    width: 100%;
+    height: 1 60px;
+  }
+
+  #reflexion-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .area {
+    flex: unset !important;
+    width: 100%;
+    min-height: auto;
+  }*/
+
+  /* botón dentro del flujo normal */
+  /*.switch-btn {
+    position: static;
+    margin: 10px auto 0 auto !important;
+    display: flex !important;
+    padding: auto 0px;
+  }
+}*/
+
+/* ============================= */
+/* 🔵 Botón flotante             */
+/* ============================= */
+
+/*.switch-btn {
+  position: fixed;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  z-index: 2000;
+}
+
+.switch-btn.hidden {
+  display: none;
+}*/
+
+/* ============================= */
+/* 🔵 Formatos de div internos   */
+/* ============================= */
+
+/*.bloque {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: var(--color-bg);
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  border: 1px solid var(--color-border);
+}*/
+
+/* Imagen placeholder */
+/*.bloque .img {
+  width: 120px;
+  height: 100px;
+  background: #bcd5ff;
+  border-radius: 10px;
+}*/
+
+/* triple → Imagen | Texto | Imagen */
+/*.bloque.triple {
+  justify-content: space-between;
+}*/
+
+/* doble → Imagen | Texto */
+/*.bloque.doble {
+  justify-content: flex-start;
+}*/
+
+/* invertido → Texto | Imagen */
+/*.bloque.invertido {
+  flex-direction: row-reverse;
+}*/
+
+/* Responsive */
+/*@media (max-width: 900px) {
+  #reflexion-container {
+    flex-direction: column;
+  }
+
+  .area {
+    flex: auto !important;
+    opacity: 1 !important;
+  }
+
+  .switch-btn {
+    display: none !important;
+  }
+}*/
+
+/* ==================== */
+/* FOOTER CON NUEVA DISTRIBUCIÓN Y COLORES */
+/* ==================== */
+footer {
+  background-color: var(--color-footer-bg);
+  color: var(--color-text);
+  width: 100%;
+  margin-top: 40px;
+  font-size: 0.85rem;
+  padding: 40px 60px 20px;
+  box-sizing: border-box;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+/* 🔹 Primera fila: ubicación | logos */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+/* Bloques */
+.footer-section {
+  flex: 1;
+  min-width: 280px;
+}
+
+.footer-section h3 {
+  color: var(--color-accent);
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.footer-section p {
+  margin: 4px 0;
+  line-height: 1.4;
+}
+
+/* 🔹 Logos centrados */
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.logos img {
+  height: 80px;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.logos img:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* 🔹 Separador */
+footer hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 25px 0;
+}
+
+/* 🔹 Contactos */
+.footer-bottom {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-bottom h3 {
+  color: var(--color-accent);
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+/* Contenedor flexible con grid */
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Bloques individuales */
+.contact-card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  width: 180px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  background-color: var(--color-bg);
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+}
+
+.contact-card p {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 0.85rem;
+}
+
+.contact-card a {
+  display: block;
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+.contact-card .rol {
+  color: gray;
+  font-size: 0.75rem;
+  margin-top: 3px;
+}
+
+/* Responsivo */
+@media (max-width: 700px) {
+  .contact-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 450px) {
+  .contact-card {
+    width: 100%;
+  }
+}
+
+
+
+
+/* Línea final */
+.footer-copy {
+  text-align: center;
+  font-size: 0.75rem;
+  color: gray;
+  margin-top: 25px;
+}
+
+

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polarización en la Sociedad</title>
+  <link rel="stylesheet" href="subestudio.css">
+</head>
+<body>
+
+  <!-- 🔹 CABECERA -->
+  <header>
+  <!-- 🔹 Navbar escritorio -->
+  <nav class="navbar">
+    <div class="nav-content">
+
+      <ul class="menu izquierda">
+        <li><a href="index.html" >Inicio</a></li>
+        <li><a href="integrantes.html" >Integrantes</a></li>
+        <li><a href="historiaDatos.html">Historia de los Datos</a></li>
+      </ul>
+
+      <div class="titulo">
+        <h1>Polarización en Bolivia</h1>
+        <p>Tiempos electorales<br><span>Evaluado por modelos de IA - LLM</span></p>
+      </div>
+
+      <ul class="menu derecha">
+        <li><a href="estudio.html" class="active">Estudio</a></li>
+        <li><a href="reflexion.html">Reflexión</a></li>
+        <li><a href="contactanos.html">Contáctanos</a></li>
+        <li>
+          <div class="dark-mode2" id="darkModeToggle2" style="padding-left: 0;padding-right: 0;padding-top: 0;padding-bottom: 4;color: rgba (223,222,222)">
+              <div class="sunnyAndMoon2">
+                  ☀️&lt&lt
+              </div>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <!-- 🔹 Navbar móvil -->
+  <div class="mobile-header">
+    <button id="menuToggle" class="menu-btn">☰</button>
+    <div class="mobile-titulo">
+      <h1>Polarización en Bolivia</h1>
+      <p>Tiempos electorales<br><span>Evaluado por modelos de IA - LLM</span></p>
+    </div>
+    <div class="dark-mode" id="darkModeToggle" style="padding-left: 0;padding-right: 0;padding-top: 0;padding-bottom: 4;color: rgba (223,222,222)">
+        <div class="sunnyAndMoon">
+            ☀️&lt&lt
+        </div>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="mobile-link">Inicio</a>
+    <a href="integrantes.html" class="mobile-link">Integrantes</a>
+    <a href="historiaDatos.html" class="mobile-link">Historia de los Datos</a>
+    <a href="estudio.html" class="mobile-link">Estudio</a>
+    <a href="reflexion.html" class="mobile-link">Reflexión</a>
+    <a href="contactanos.html" class="mobile-link">Contáctanos</a>
+  </div>
+</header>
+
+
+  <!-- 🔹 CUERPO PRINCIPAL -->
+  <main class="contenido">
+    <!-- === SECCIÓN 1: RESUMEN SUBESTUDIO  === -->
+    <section id="resumen-medios" class="seccion resumen-medios card">
+      <div class="medio-seleccionado">
+        <div id="medioImagen" class="medio-img-grande"></div>
+
+        <div class="medio-info">
+          <h2 id="medioNombre">Nombre del Medio</h2>
+          <p><strong>Días:</strong> <span id="infoDias">0</span></p>
+          <p><strong>Publicaciones:</strong> <span id="infoPublicaciones">0</span></p>
+          <p><strong>Comentarios:</strong> <span id="infoComentarios">0</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- === SECCIÓN 2: PANEL DE 6 PARÁMETROS Y PUNTUACIÓN === -->
+    <section id="panel-puntuacion" class="seccion panel-puntuacion card">
+      <h2>Estudio — Puntuación</h2>
+
+      <div class="parametros-grid">
+        <!-- cada parámetro: nombre arriba, input abajo -->
+        <div class="param">
+          <div class="param-nombre">Agresividad (25%) <br> Agresividad x 0.25</div>
+          <input type="number" id="p_agresividad" class="param-input" min="0" max="100" value="50">
+        </div>
+
+        <div class="param">
+          <div class="param-nombre">Ofensa (20%) <br> Ofensa x 0.20</div>
+          <input type="number" id="p_ofensa" class="param-input" min="0" max="100" value="50">
+        </div>
+
+        <div class="param">
+          <div class="param-nombre">Ideología (15%) <br> Ideología x 0.15</div>
+          <input type="number" id="p_ideologia" class="param-input" min="0" max="100" value="50">
+        </div>
+
+        <div class="param">
+          <div class="param-nombre">Constructividad (20%) <br> (100 - Constructividad) x 0.20</div>
+          <input type="number" id="p_constructividad" class="param-input" min="0" max="100" value="50">
+        </div>
+
+        <div class="param">
+          <div class="param-nombre">Empatía (10%) <br> (100 - Empatía) x 0.10</div>
+          <input type="number" id="p_empatia" class="param-input" min="0" max="100" value="50">
+        </div>
+
+        <div class="param">
+          <div class="param-nombre">Diálogo (10%) <br> (100 - Diálogo) x 0.10</div>
+          <input type="number" id="p_dialogo" class="param-input" min="0" max="100" value="50">
+        </div>
+      </div>
+
+      <div class="calc-row">
+        <button id="btnCalcularPuntuacion" class="btn">Calcular Puntuación</button>
+        <div class="puntuacion-valor card">
+          <div>Puntuación</div>
+          <div id="valorPuntuacion">--</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- === SECCIÓN 3: BOTONES DE PARÁMETROS + GRÁFICA POLIGONAL === -->
+    <section id="grafica-poligonal" class="seccion grafica-poligonal card">
+
+      <!-- Contenedor de parámetros -->
+      <div class="parametros-grid1">
+
+        <!-- Columna izquierda: Botones de parámetros -->
+        <div class="parametros-col">
+          <button class="btn-parametro" data-param="puntuacion">Puntuación</button>
+          <button class="btn-parametro" data-param="agresividad">Agresividad</button>
+          <button class="btn-parametro" data-param="ofensa">Ofensa</button>
+          <button class="btn-parametro" data-param="constructividad">Constructividad</button>
+          <button class="btn-parametro" data-param="ideologia">Ideología</button>
+          <button class="btn-parametro" data-param="empatia">Empatía</button>
+          <button class="btn-parametro" data-param="dialogo">Diálogo</button>
+          <!-- fila final vacía + botones -->
+          <div class="espacio-vacio"></div>
+          <div class="orden-buttons">
+            <button id="btnOrdenarFecha" class="btn small">Ordenar Fecha</button>
+            <button id="btnOrdenarMinMax" class="btn small">Ordenar Min-Max</button>
+          </div>
+        </div>
+
+        <!-- Columna derecha: gráfico -->
+        <div class="grafica-col">
+          <div id="contenedorPoligonal" class="grafica-placeholder">
+            <!-- Tu canvas/SVG va aquí -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- === SECCIÓN 4: TABLA DE FRECUENCIAS REAL + BOTONES + MEDIDAS === -->
+    <section id="tabla-frecuencias" class="seccion tabla-frecuencias card">
+
+      <div class="tabla-controls">
+        
+        <div class="col-botones">
+          <button class="btn xsmall" data-col="Puntuación">Puntuación</button>
+          <button class="btn xsmall" data-col="Agresividad">Agresividad</button>
+          <button class="btn xsmall" data-col="Ofensa">Ofensa</button>
+          <button class="btn xsmall" data-col="Ideología">Ideología</button>
+          <button class="btn xsmall" data-col="Constructividad">Constructividad</button>
+          <button class="btn xsmall" data-col="Empatía">Empatía</button>
+          <button class="btn xsmall" data-col="Diálogo">Diálogo</button>
+        </div>
+
+        <div class="medidas-estadisticas card compact">
+          <div>Media: <span id="stat-media">--</span></div>
+          <div>Mediana: <span id="stat-mediana">--</span></div>
+          <div>Moda: <span id="stat-moda">--</span></div>
+        </div>
+      </div>
+
+      <div class="tabla-wrap">
+        <table id="tablaFrecuencias" class="tabla-f compacta">
+          <thead>
+            <tr>
+              <th id="col-titulo">
+                Valor <br> (Puntuación)<br><span class="abbr">X</span>
+              </th>
+              <th>Frecuencia  <br>Absoluta<br><span class="abbr">f</span></th>
+              <th>Frecuencia <br> Acumulada<br><span class="abbr">F</span></th>
+              <th>Frecuencia <br>Relativa<br><span class="abbr">fr</span></th>
+              <th>Frecuencia <br>Relativa <br> Acumulada<br><span class="abbr">Fr</span></th>
+              <th><span class="abbr">fr%</span></th>
+              <th><span class="abbr">Fr%</span></th>
+            </tr>
+          </thead>
+
+          <tbody></tbody>
+        </table>
+      </div>
+
+    </section>
+
+
+    <!-- === SECCIÓN 5: palabras + barras + burbujas === -->
+    <section id="palabras-graficas" class="seccion palabras-graficas card">
+      <h3><span id="cantidadPalabras">0</span> palabras en los comentarios</h3>
+
+      <div class="graficas-area">
+        <div id="grafBarras" class="graf-box">
+          <!-- tu script de barras monta aqui -->
+        </div>
+        <div id="grafBurbuja" class="graf-box">
+          <!-- tu script de burbujas monta aqui -->
+        </div>
+      </div>
+    </section>
+
+    <!-- === SECCIÓN 6: Torta y clasificación === -->
+    <section id="torta-clasificacion" class="seccion torta-clasificacion card">
+      <div class="torta-header">
+        <div><strong id="cantidadComentariosTotal">0</strong> comentarios</div>
+        <div class="torta-controls">
+          <button id="vistaPorcentaje" class="btn small">Vista %</button>
+          <button id="vistaCantidad" class="btn small">Vista Cantidad</button>
+        </div>
+      </div>
+
+      <div class="torta-wrap">
+        <div id="grafTorta" class="graf-box" style="min-height:240px; min-width: 70%;"></div>
+        <div class="clasificaciones">
+          <div>Destructivos: <span id="countDestructivos">0</span></div>
+          <div>Neutrales: <span id="countNeutrales">0</span></div>
+          <div>Constructivos: <span id="countConstructivos">0</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- === SECCIÓN 7: Días analizados del medio seleccionado === -->
+    <section id="dias-medios" class="seccion dias-medios card">
+      <h3>Días analizados</h3>
+
+      <div class="bloque-dias">
+        <h4 id="tituloDias"></h4>
+        <div id="diasMedioSeleccionado" class="dias-grid"></div>
+      </div>
+    </section>
+
+   
+  </main>
+
+<!-- 🔹 PIE DE PÁGINA -->
+    <footer>
+    <div class="footer-top">
+        <!-- 🗺️ Ubicación -->
+        <div class="footer-section ubicacion">
+        <h3>Ubicación</h3>
+        <p>Monoblock UMSA, Federico Zuazo 1913, La Paz</p>
+        <p>Facultad de Ciencias Puras</p>
+        <p>Carrera de Informática</p>
+        </div>
+
+        <!-- 🏛️ Logos -->
+        <div class="footer-section logos">
+        <img src="img/logoUMSA.png" alt="Logo UMSA">
+        <img src="img/logoFCPN.png" alt="Logo FCPN">
+        <img src="img/logoINF.png" alt="Logo Informática">
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- 📧 Contactos compactos -->
+    <div class="footer-bottom contacto">
+        <h3>Contáctanos</h3>
+        <div class="contact-grid">
+        <div class="contact-card">
+            <p><strong>Anderson Andi Choque Quispe</strong></p>
+            <a href="mailto:achoqueq2@fcpn.edu.bo">achoqueq2@fcpn.edu.bo</a>
+            <p class="rol">(Líder del grupo)</p>
+        </div>
+        <div class="contact-card">
+            <p><strong>Anel Escarlet Ilimori Totola</strong></p>
+            <a href="mailto:ailimorit@fcpn.edu.bo">ailimorit@fcpn.edu.bo</a>
+        </div>
+        <div class="contact-card">
+            <p><strong>Miguel Angel Rojas Ramos</strong></p>
+            <a href="mailto:mrojasr@fcpn.edu.bo">mrojasr@fcpn.edu.bo</a>
+        </div>
+        <div class="contact-card">
+            <p><strong>René Gonzalo Huanca Mamani</strong></p>
+            <a href="mailto:rhuancam2@fcpn.edu.bo">rhuancam2@fcpn.edu.bo</a>
+        </div>
+        <div class="contact-card">
+            <p><strong>José Valentín Apaza Salazar</strong></p>
+            <a href="mailto:japazas3@fcpn.edu.bo ">japazas3@fcpn.edu.bo </a>
+        </div>
+        </div>
+    </div>
+
+    <div class="footer-copy">
+        © 2025 — Proyecto "Polarización en la Sociedad"
+    </div>
+    </footer>
+
+
+
+
+
+  <!-- Script para subrayado dinámico -->
+  <script>
+    const links = document.querySelectorAll('.menu a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="subestudio.js"></script>
+</body>
+</html>

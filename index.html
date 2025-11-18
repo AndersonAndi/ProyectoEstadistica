@@ -1,0 +1,186 @@
+  <!DOCTYPE html>
+  <html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polarización en la Sociedad</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <!-- 🔹 CABECERA -->
+    <header>
+    <!-- 🔹 Navbar escritorio -->
+    <nav class="navbar">
+      <div class="nav-content">
+
+        <ul class="menu izquierda">
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="integrantes.html" >Integrantes</a></li>
+          <li><a href="historiaDatos.html">Historia de los Datos</a></li>
+        </ul>
+
+        <div class="titulo">
+          <h1>Polarización en Bolivia</h1>
+          <p>Tiempos electorales<br><span>Evaluado por modelos de IA - LLM</span></p>
+        </div>
+
+        <ul class="menu derecha">
+          <li><a href="estudio.html">Estudio</a></li>
+          <li><a href="reflexion.html">Reflexión</a></li>
+          <li><a href="contactanos.html">Contáctanos</a></li>
+          <li>
+            <div class="dark-mode2" id="darkModeToggle2" style="padding-left: 0;padding-right: 0;padding-top: 0;padding-bottom: 4;color: rgba (223,222,222)">
+                <div class="sunnyAndMoon2">
+                    ☀️&lt&lt
+                </div>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <!-- 🔹 Navbar móvil -->
+    <div class="mobile-header">
+      <button id="menuToggle" class="menu-btn">☰</button>
+      <div class="mobile-titulo">
+        <h1>Polarización en Bolivia</h1>
+        <p>Tiempos electorales<br><span>Evaluado por modelos de IA - LLM</span></p>
+      </div>
+      <div class="dark-mode" id="darkModeToggle" style="padding-left: 0;padding-right: 0;padding-top: 0;padding-bottom: 4;color: rgba (223,222,222)">
+          <div class="sunnyAndMoon">
+              ☀️&lt&lt
+          </div>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-link">Inicio</a>
+      <a href="integrantes.html" class="mobile-link">Integrantes</a>
+      <a href="historiaDatos.html" class="mobile-link">Historia de los Datos</a>
+      <a href="estudio.html" class="mobile-link">Estudio</a>
+      <a href="reflexion.html" class="mobile-link">Reflexión</a>
+      <a href="contactanos.html" class="mobile-link">Contáctanos</a>
+    </div>
+  </header>
+
+
+    <!-- Hero-->
+    <main class="contenido">
+  <section class="hero" aria-label="Sección principal - inicio">
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- 🔹 Preguntas arriba -->
+    <div class="hero-top">
+      <div class="pregunta-card">
+        <h3>¿Hay polarización entre Bolivianos?</h3>
+      </div>
+      <div class="spacio-entre"></div>
+      <div class="pregunta-card">
+        <h3>¿Qué tan polarizados estamos?</h3>
+      </div>
+    </div>
+
+    <!-- 🔹 Espacio flexible o bloque de imágenes (según tamaño de pantalla) -->
+    <div class="hero-spacer">
+      <!-- Este contenedor solo aparece en pantallas pequeñas -->
+      <div class="hero-img-grid">
+        <div class="fila">
+          <img src="img/PDC.png" alt="PDC" class="partido-img">
+          <div class="img-espacio"></div>
+          <img src="img/LIBRE.png" alt="LIBRE" class="partido-img">
+        </div>
+        <div class="fila fila-gente">
+          <img src="img/GentePDC.png" alt="Simpatizantes PDC" class="gente-img">
+          <div class="img-espacio"></div>
+          <img src="img/GenteLIBRE.png" alt="Simpatizantes LIBRE" class="gente-img">
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔹 Texto y botón abajo -->
+    <div class="hero-texto">
+      <h2>Polarización en Bolivia</h2>
+      <p>Tiempos Electorales</p>
+      <p class="subtexto">Evaluado por modelos de IA - LLM</p>
+      <button class="btn-iniciar" type="button" aria-label="Iniciar">Iniciar</button>
+    </div>
+  </section>
+</main>
+
+
+
+  <!-- 🔹 PIE DE PÁGINA -->
+      <footer>
+      <div class="footer-top">
+          <!-- 🗺️ Ubicación -->
+          <div class="footer-section ubicacion">
+          <h3>Ubicación</h3>
+          <p>Monoblock UMSA, Federico Zuazo 1913, La Paz</p>
+          <p>Facultad de Ciencias Puras</p>
+          <p>Carrera de Informática</p>
+          </div>
+
+          <!-- 🏛️ Logos -->
+          <div class="footer-section logos">
+          <img src="img/logoUMSA.png" alt="Logo UMSA">
+          <img src="img/logoFCPN.png" alt="Logo FCPN">
+          <img src="img/logoINF.png" alt="Logo Informática">
+          </div>
+      </div>
+
+      <hr>
+
+      <!-- 📧 Contactos compactos -->
+      <div class="footer-bottom contacto">
+          <h3>Contáctanos</h3>
+          <div class="contact-grid">
+          <div class="contact-card">
+              <p><strong>Anderson Andi Choque Quispe</strong></p>
+              <a href="mailto:achoqueq2@fcpn.edu.bo">achoqueq2@fcpn.edu.bo</a>
+              <p class="rol">(Líder del grupo)</p>
+          </div>
+          <div class="contact-card">
+              <p><strong>Anel Escarlet Ilimori Totola</strong></p>
+              <a href="mailto:ailimorit@fcpn.edu.bo">ailimorit@fcpn.edu.bo</a>
+          </div>
+          <div class="contact-card">
+              <p><strong>Miguel Angel Rojas Ramos</strong></p>
+              <a href="mailto:mrojasr@fcpn.edu.bo">mrojasr@fcpn.edu.bo</a>
+          </div>
+          <div class="contact-card">
+              <p><strong>René Gonzalo Huanca Mamani</strong></p>
+              <a href="mailto:rhuancam2@fcpn.edu.bo">rhuancam2@fcpn.edu.bo</a>
+          </div>
+          <div class="contact-card">
+              <p><strong>José Valentín Apaza Salazar</strong></p>
+              <a href="mailto:japazas3@fcpn.edu.bo ">japazas3@fcpn.edu.bo </a>
+          </div>
+          </div>
+      </div>
+
+      <div class="footer-copy">
+          © 2025 — Proyecto "Polarización en la Sociedad"
+      </div>
+      </footer>
+
+
+
+
+
+    <!-- Script para subrayado dinámico -->
+    <script>
+      const links = document.querySelectorAll('.menu a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          links.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        });
+      });
+    </script>
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      <script src="script.js"></script>
+  </body>
+  </html>

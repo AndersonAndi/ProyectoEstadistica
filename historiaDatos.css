@@ -1,0 +1,1066 @@
+/* ==================== */
+/* 🎨 VARIABLES DE COLOR */
+/* ==================== */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-accent: #0077ff;
+  --color-card-bg: #f3f3f3;
+  --color-border: #ccc;
+  --color-footer-bg: #f5f5f5;
+  --color-text-sunnyAndMoon:rgba(223,222,222);
+  --dark-mode-width:80px;
+  --dark-mode-height:40px;
+  --color-b3: rgba(255, 255, 255, 0.7); /* blanco semitransparente */
+  
+}
+
+/* 🌙 DARK MODE */
+body.dark-mode {
+  --color-bg: rgba(22,22,22);       /* fondo negro */
+  --color-text: #ffffff;     /* texto blanco */
+  --color-accent: #FCDE5B;  /* amarillo para botones y acentos */
+  --color-card-bg: #1a1a1a;  /* color de tarjetas oscuro */
+  --color-border: #333333;   /* bordes oscuros */
+  --color-footer-bg: rgba(11,11, 11,); /* fondo footer negro */
+  --color-text-sunnyAndMoon:#ffff;  
+  background-color: var(--color-bg);
+  --color-b3:rgba(108, 108, 108, 0.349);
+  /*color: var(--color-text);*/
+}
+/* ========= MOBILE HEADER ========= */
+.mobile-header,
+.mobile-menu {
+  display: none;
+}
+/**/
+
+.dark-mode2{
+    border-radius: 999px;
+    background-color: #DFDEDE;
+    cursor: pointer;
+    
+    min-width: 50px;   /* garantiza que sea visible */
+    min-height: 25px;  /* garantiza que sea visible */
+    transition: background-color 0.5s ease;
+    flex-shrink: 0;
+
+}
+body.active2 .dark-mode2{
+    background-color: white;
+}
+
+.sunnyAndMoon2{
+  font-size: 1.5rem;
+  user-select: none;
+  transition: transform 0.4s ease;
+  color: rgba(223,222,222);
+  
+}
+
+/*body.dark-mode2 .mobile-header {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+}*/
+
+/* Botón hamburguesa en dark mode */
+body.dark-mode2 .menu-btn,
+body.dark-mode2 .darkmode-btn {
+  color: var(--color-accent);
+}
+
+/* Menú móvil en dark mode */
+body.dark-mode2 .mobile-menu {
+  background: linear-gradient(135deg, #1a1a1a, #000000);
+  color: var(--color-text);
+}
+
+
+
+/* Títulos y links con acento amarillo en dark mode */
+body.dark-mode2 .titulo span,
+body.dark-mode2 .menu a.active2,
+body.dark-mode2 .contact-card a:hover {
+  color: var(--color-accent);
+}
+
+/**/
+
+
+
+
+
+
+/* 🔹 Botón de Dark Mode */
+.darkmode-toggle {
+  background: none;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.darkmode-toggle:hover {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+/* ==================== */
+/* ESTILOS GENERALES    */
+/* ==================== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* ==================== */
+/* NAVBAR UNIFICADO     */
+/* ==================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Menús */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  justify-content: center;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.menu a:hover {
+  border-bottom: 2px solid var(--color-accent);
+  color: var(--color-accent)
+}
+
+.menu a.active {
+  border-bottom: 2px solid var(--color-accent);
+  color: var(--color-accent)
+}
+
+
+
+/* ==================== */
+/* TÍTULO CENTRAL       */
+/* ==================== */
+.titulo {
+  text-align: center;
+  flex: 1.2;
+  color: var(--color-text);
+}
+
+.titulo h1 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.titulo p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text);
+}
+
+.titulo span {
+  font-style: italic;
+  color: var(--color-accent)
+}
+
+/* ==================== */
+/* CUERPO PRINCIPAL     */
+/* ==================== */
+
+/* ==================== */
+/* FOOTER CON NUEVA DISTRIBUCIÓN Y COLORES */
+/* ==================== */
+footer {
+  background-color: var(--color-footer-bg);
+  color: var(--color-text);
+  width: 100%;
+  margin-top: 40px;
+  font-size: 0.85rem;
+  padding: 40px 60px 20px;
+  box-sizing: border-box;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+/* 🔹 Primera fila: ubicación | logos */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+/* Bloques */
+.footer-section {
+  flex: 1;
+  min-width: 280px;
+}
+
+.footer-section h3 {
+  color: var(--color-accent);
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.footer-section p {
+  margin: 4px 0;
+  line-height: 1.4;
+}
+
+/* 🔹 Logos centrados */
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.logos img {
+  height: 80px;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.logos img:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* 🔹 Separador */
+footer hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 25px 0;
+}
+
+/* 🔹 Contactos */
+.footer-bottom {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-bottom h3 {
+  color: var(--color-accent);
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+/* Contenedor flexible con grid */
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Bloques individuales */
+.contact-card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  width: 180px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  background-color: var(--color-bg);
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+}
+
+.contact-card p {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 0.85rem;
+}
+
+.contact-card a {
+  display: block;
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+.contact-card .rol {
+  color: gray;
+  font-size: 0.75rem;
+  margin-top: 3px;
+}
+
+/* Responsivo */
+@media (max-width: 700px) {
+  .contact-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 450px) {
+  .contact-card {
+    width: 100%;
+  }
+}
+
+
+
+
+/* Línea final */
+.footer-copy {
+  text-align: center;
+  font-size: 0.75rem;
+  color: gray;
+  margin-top: 25px;
+}
+
+
+/* ==================== */
+/* ==============================
+   BLOQUE 1
+============================== */
+.bloque {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+}
+
+.bloque1 {
+  background: url('img/HistoriaDatos.jpg') center/cover no-repeat;
+}
+
+.bloque1 .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.bloque1-contenido {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  color: #fff;
+  margin-bottom: 0px;
+
+}
+
+.bloque1-contenido h1 {
+  font-size: 5.5rem;
+  max-width: 100vw;
+  margin-top: 13vh;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+/*.btn-flecha {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.flecha {
+  font-size: 2rem;
+  animation: flechaSubeBaja 2s infinite;
+}*/
+
+
+
+@keyframes flechaSubeBaja {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+  100% { transform: translateY(0); }
+}
+
+/* --- Contenedor principal --- */
+.flecha-contenido1 {
+  position: relative;
+  width: 300px;
+  height: 150px;
+  margin: 50px auto;
+  animation: flechaSubeBaja 2s infinite;
+}
+
+/* --- Capa de la flecha --- */
+.forma-flecha1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Botón de flecha --- */
+.arrow-button1 {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.arrow1 {
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 150px solid #333; /* color de la flecha */
+}
+
+/* --- Capa del texto --- */
+.contenido1 {
+  position: absolute;
+  top: 0;             /* arriba del contenedor */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  pointer-events: none;
+  white-space: pre-line;        /* respeta saltos de línea */
+  padding-top: 10px;            /* distancia desde arriba */
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+.contenido1 h2 {
+  margin: 0;
+  padding: 0 10px; /* espacio lateral */
+}
+
+
+/* ==============================
+   BLOQUE 2
+============================== */
+.bloque2 {
+  display: flex;
+  flex-direction: column;
+  background: url('img/Planeta.jpg') center/cover no-repeat;
+  transition: background-image 0.6s ease;
+  position: relative;
+}
+
+.barras-laterales {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding-left: 20px;
+  z-index: 3;
+}
+
+.barra {
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  padding: 15px 20px;
+  font-weight: 500;
+  cursor: pointer;
+  clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.barra:hover, .barra.active {
+  background-color: var(--color-accent);
+  transform: translateX(8px);
+}
+
+.bloque2-contenido {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  transition: background 0.5s ease;
+}
+
+.x{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 120px;
+}
+
+.y{
+margin-top: 20px;
+
+}
+
+/* ==============================
+   BLOQUE 3
+============================== */
+.bloque3 {
+  background: url('img/Facebook.png') center/cover no-repeat;
+  position: relative;
+  transition: background 0.6s ease;
+  width: 100%;
+  height: 105vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+}
+
+
+
+.overlay-bloque3 {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  /*background: rgba(255,255,255,0.25);*/
+  z-index: 1;
+  pointer-events: none;
+}
+
+/*body.dark-mode .overlay-bloque3 {
+  background:  rgba(0,0,0,0.5);
+  z-index: 1;
+}*/
+
+.icon-proceso {
+  width: 120px;
+  height: 120px;
+  animation: crecerSuave 2.5s ease-in-out infinite;
+  cursor: pointer;
+  z-index: 3;
+  position: relative;
+}
+
+@keyframes crecerSuave {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* Estado activo del bloque 3 */
+.bloque3.activo .icon-proceso {
+  display: none;
+}
+
+.bloque3-contenido {
+  z-index: 3;
+}
+
+.bloque3 .div-contenido {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.bloque3 .div-contenido.activo {
+  display: flex;
+}
+
+.IniciarHistoria{
+  width: 470px;
+  height: 470px;
+  border-radius: 50%;
+  background-color: #4e99f5b9;
+  z-index: 4;
+  font-size: 1.5rem;
+  cursor: pointer;
+  
+  /* Aplica la animación */
+    animation-name: pulsar; /* Nombre de la animación */
+    animation-duration: 2s; /* Duración de un ciclo */
+    animation-iteration-count: infinite; /* Se repite indefinidamente */
+    animation-timing-function: ease-in-out; /* Suaviza el inicio y fin de cada ciclo */
+
+}
+
+.IniciarHistoria h2{
+  pointer-events: none;
+}
+
+.IniciarHistoria h1{
+  pointer-events: none;
+}
+
+.p1{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+}
+
+.p2{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.base{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 90px;
+}
+
+.paso1 img{
+  width: 5px;
+}
+
+.img5{
+  max-width: 100px;
+}
+
+/* Definición de la animación usando @keyframes */
+@keyframes pulsar {
+    0% {
+        /* Estado inicial: tamaño normal */
+        transform: scale(1); 
+        width: 470px;
+        height: 470px;
+    }
+    50% {
+        /* Punto medio: crece */
+        transform: scale(0.97); 
+        width: 470px;
+        height: 470px;
+        font-size: 1.5rem;/* Ajuste opcional de fuente */
+    }
+    100% {
+        /* Estado final: vuelve al tamaño normal (mismo que 0%) */
+        transform: scale(1);
+        width: 470px;
+        height: 470px;
+    }
+}
+
+/* ==================== */
+
+/*.bloque3 {
+  position: relative;
+  min-height: 100vh;
+  background: url('img/Facebook.png') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 5%;
+  overflow: hidden;
+}*/
+
+/* overlay (si lo usas solo como efecto visual) */
+/*.overlay-bloque3 {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.2);
+  pointer-events: none; *//* deja pasar clics */
+ /*z-index: 1;
+}*/
+
+/* contenedor principal */
+/*.contenido-bloque3 {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}*/
+
+/* grid flexible de pasos */
+.historia-container {
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  justify-items: center;
+}
+
+/* cada paso del proceso */
+.paso {
+  /*background: rgba(255, 255, 255, 0.7); *//* blanco semitransparente */
+  background: var(--color-b3);
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 480px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.paso:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.paso p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+/* imágenes dentro del paso */
+.paso img {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  border-radius: 12px;
+  margin: 6px;
+  object-fit: contain;
+}
+
+.paso span {
+  font-weight: bold;
+  font-size: 2rem;
+  color: var(--color-accent);
+  /*border: rgba(0, 0, 0, 0.56) 2px solid;
+  border-radius: 30%;*/
+}
+
+/* cuando hay varias imágenes */
+.imagenes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1px;
+}
+
+/* ==================== */
+
+/* Cada div interno puede adaptarse según el diseño del texto + imágenes */
+.div-imagenes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.div-imagenes img {
+  width: 10px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.divs-container1{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: black;
+  text-align: center;
+}
+
+
+@media (max-width: 870px) {
+  .navbar {
+    display: none;
+  }
+
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px;
+    background: var(--color-bg);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+
+  /* 🔹 Ajuste del área central del título */
+  .mobile-titulo {
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+    overflow: hidden;
+  }
+
+  .mobile-titulo h1 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .mobile-titulo p {
+    font-size: 0.75rem;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .mobile-titulo span {
+    font-size: 0.7rem;
+    opacity: 0.85;
+  }
+
+  /* 🔹 Botón hamburguesa */
+  .menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--color-accent);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .menu-btn.active {
+    transform: rotate(90deg);
+  }
+
+.dark-mode{
+    border-radius: 999px;
+    background-color: #DFDEDE;
+    cursor: pointer;
+    
+    min-width: 50px;   /* garantiza que sea visible */
+    min-height: 25px;  /* garantiza que sea visible */
+    transition: background-color 0.5s ease;
+    flex-shrink: 0;
+
+}
+body.active .dark-mode{
+    background-color: white;
+}
+
+.sunnyAndMoon{
+  font-size: 1.5rem;
+  user-select: none;
+  transition: transform 0.4s ease;
+  color: var(--color-text-sunnyAndMoon);
+  
+}
+
+body.dark-mode .mobile-header {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+/* Botón hamburguesa en dark mode */
+body.dark-mode .menu-btn,
+body.dark-mode .darkmode-btn {
+  color: var(--color-accent);
+}
+
+/* Menú móvil en dark mode */
+body.dark-mode .mobile-menu {
+  background: linear-gradient(135deg, #1a1a1a, #000000);
+  color: var(--color-text);
+}
+
+
+
+/* Títulos y links con acento amarillo en dark mode */
+body.dark-mode .titulo span,
+body.dark-mode .menu a.active,
+body.dark-mode .contact-card a:hover {
+  color: var(--color-accent);
+}
+
+  /* 🔹 Menú móvil */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-bg));
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+    transition: all 0.5s ease;
+    z-index: 999;
+  }
+
+  .mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+
+  .mobile-menu a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .mobile-menu a:hover {
+    color: #fff;
+  }
+
+  .bloque1-contenido h1 {
+  font-size:3.5rem;
+  max-width: 100vw;
+  margin-top: 10vh;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+/* --- Contenedor principal --- */
+.flecha-contenido1 {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  margin: 25px auto;
+  animation: flechaSubeBaja 2s infinite;
+}
+
+/* --- Capa de la flecha --- */
+.forma-flecha1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Botón de flecha --- */
+.arrow-button1 {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.arrow1 {
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-top: 100px solid #333; /* color de la flecha */
+}
+
+/* --- Capa del texto --- */
+.contenido1 {
+  position: absolute;
+  top: 0;             /* arriba del contenedor */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  color: white;
+  font-size: 0.744rem;
+  font-weight: bold;
+  text-align: center;
+  pointer-events: none;
+  white-space: pre-line;        /* respeta saltos de línea */
+  padding-top: 10px;            /* distancia desde arriba */
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+.contenido1 h2 {
+  margin: 0;
+  padding: 0 10px; /* espacio lateral */
+}
+
+#bloque3 {
+  background: url('img/Facebook.png') center/cover no-repeat;
+  position: relative;
+  transition: background 0.6s ease;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+}
+
+.p1{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.p2{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.base{
+  display: flex;
+  flex-wrap: column;
+  gap: 20px;
+  margin-top: 90px;
+  justify-content: center;
+}
+
+
+
+}
